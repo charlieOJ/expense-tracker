@@ -18,7 +18,7 @@ const ExpenseForm = (props) => {
   };
   const amountChangeHandler = e => {
     setNewExpenseInputs((prevState) => {
-      return { ...prevState, amount: e.target.value }
+      return { ...prevState, amount: +e.target.value }
     });
   };
 
