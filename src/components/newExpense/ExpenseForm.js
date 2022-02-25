@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
-  const { onSaveNewExpense } = props;
+  const { onSaveNewExpense, onCancel } = props;
 
   const [newExpenseInputs, setNewExpenseInputs] = useState({ title: '', date: '', amount: '' });
   const titleChangeHandler = e => {
@@ -25,7 +25,6 @@ const ExpenseForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     onSaveNewExpense({ ...newExpenseInputs, date: new Date(newExpenseInputs.date) });
-    // console.log("newExpenseInputs: ", { ...newExpenseInputs, date: new Date(newExpenseInputs.date) });
     // Set form input empty once form submit
     setNewExpenseInputs({ title: '', date: '', amount: '' })
   };
@@ -46,6 +45,7 @@ const ExpenseForm = (props) => {
       </div>
     </div>
     <div className="new-expense__actions" >
+      <button type="button" onClick={onCancel}>Cancel</button>
       <button type="submit">Add Expense</button>
     </div>
   </form>);
