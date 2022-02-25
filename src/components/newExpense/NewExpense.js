@@ -38,10 +38,6 @@ const NewExpense = (props) => {
       )}
     </div>
   );
-
-  return (<div className='new-expense'>
-    <ExpenseForm onSaveNewExpense={onAddNewExpense} />
-  </div>);
 }
 
 export default NewExpense;
