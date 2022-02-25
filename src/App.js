@@ -1,7 +1,7 @@
 import Expenses from './components/expenses/Expenses';
 import { expenses } from './expenses'
 
-function App() {
+const App = () => {
   return (
     <div>
       <h2>Let's get started!</h2>
